@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片滚动</title>
+<style>
+*{margin: 0px;padding: 0;}
+	.show{width: 400px;height: 400px;overflow: hidden;position:relative;}
+	.pic{width: 1600px;}
+	img{width: 400px;height: 400px;float: left;}
+	ul{list-style: none;position: absolute;top:350px;left: 30px;}
+	ul li{float: left;
+	}
+  .ai{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: block;
+     	border:1px solid blue;
+     	margin-left: 30px;
+     	background-color: rgba(211,21,234,0.5);
+     }
+     .active{
+     	background-color: red;
+     }
+</style>
+</head>
+<body>
+	<div class="show">
+		<div id="pic">
+			<img class="img"  src="images/1.jpg" alt="">
+			<img class="img" src="images/2.jpg" alt="">
+			<img class="img" src="images/3.jpg" alt="">
+			<img class="img" src="images/4.jpg" alt="">
+		</div>
+	</div>
+	<ul>
+		  <li><a class="ai active" href="#" title="0"></a></li>
+			<li><a class="ai" href="#" title="1"></a></li>
+			<li><a class="ai" href="#" title="2"></a></li>
+			<li><a class="ai" href="#" title="3"></a></li>
+			</ul>
+  <script>
+  function G(sId){
+  	return document.getElementsByTagName(sId);
+  }
+  var pic=document.getElementById("pic");
+  for(var i=0;i<G("a").length;i++){
+  			// G("a")[i].index=i;
+  			// G("a")[i].classn=G("a")[i].className;
+  		var arr=G("a")[i].className.split(" ");
+  		for(var m=0; m<arr.length;m++){
+  			if(arr[m]=="active"){
+  				arr.splice(m,1);
+  			}
+  			var att=arr.join(" ");
+  			G("a")[i].classn=att;
+  		}
+  	G("a")[i].onclick=function(event){
+  		event.preventDefault();
+  		// var num=this.index*-400+"px";
+  		var num=this.title*-400+"px";
+  		pic.style.marginLeft=num;
+  		// var name=this.className;
+  		for(var j=0;j<G("a").length;j++){
+  			// G("a")[j].style.backgroundColor="rgba(211,21,234,0.5)";
+  			// G("a")[j].className=name;
+  			G("a")[j].className=G("a")[j].classn;
+  		}
+  		// this.style.backgroundColor="red";
+  			this.className=this.classn+" "+"active"
+  	}
+  }
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
