@@ -1,0 +1,51 @@
+*{  margin: 0; padding: 0;}
+ul li{ list-style: none; }
+a{ text-decoration: none; }
+.clearfix:before,.clearfix:after{ display: block; content: "";}
+.clearfix:after{ clear: both;}
+.clearfix{zoom: 1;}
+
+header{}
+.header-top{ width: 1000px;  margin: 0 auto; }
+.logo{ width: 260px; float: left;}
+nav{ width: 430px; float: right; line-height: 60px; }
+nav a{ color:#212121; }
+.header-top ul li{ float: left; margin-left: 40px;}
+.banner{background: url(../images/banner.jpg) no-repeat center; height: 265px;}
+.banner-inner{ width: 1000px; margin: 0 auto;}
+.banner-inner p{ color: #fff; font-size: 40px; font-family: Arial; line-height: 265px; text-shadow: 1px 0px 5px #000;}
+.animate{-webkit-animation-duration:2s;animation-duration:2s;}
+.main{ width: 95%;max-width: 1000px; margin: 0 auto; margin-top: 40px;}
+.main ul{ }
+.main ul li{ float: left; width: 30%; box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;margin-bottom: 20px; margin-left: 1.5%; margin-right: 1.5%;}
+.main ul li img{display: block; width: 100%;}
+.main ul li p{ color: #212121; padding: 10px;text-align: center;}
+.font{ display: none; }
+
+footer{ background-color: #032e13; height: 90px; margin-top: 40px; font-family: Arial;}
+footer p{ margin: 0; color: #ccc; text-align: center; line-height: 90px; font-size: 14px; }
+@media all and (max-width:768px){
+  .header-top{ width:100%;}
+  .banner-inner{ width: 100%;}
+  .main{ width:95%; margin: 0 auto; margin-top: 40px; }
+  .main ul{ margin-bottom: 20px;}
+  .main ul li{ width: 48%; float: left;margin-right:1%; margin-left: 1%;}
+  .main ul li img{width:100%; }
+  .main ul li p{color: #212121; padding: 10px;text-align: center;}
+  .font{ display: none; }
+}
+@media all and (max-width:414px){
+  .header-top{ width:100%;}
+  .banner-inner{ width: 100%;}
+  .main{ width:95%; margin: 0 auto; margin-top: 40px; }
+  .main ul{ margin-bottom: 20px;}
+  .main ul li{ width: 98%; float: left;margin-right:1%; margin-left: 1%;}
+  .main ul li img{width:100%; }
+  .main ul li p{color: #212121; padding: 10px;text-align: center;}
+  .banner-inner p{font-size: 20px;}
+  .font{ display:block;text-align: right; line-height: 60px; padding-right: 5px; font-size: 22px; }
+  nav{  line-height: 60px; float: none; display: none; }
+  nav a{}
+  .header-top ul li{ float: none; text-align: center; margin-left:0;}
+
+}
